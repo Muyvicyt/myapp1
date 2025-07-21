@@ -1,5 +1,5 @@
 
-//这个是主文件入口
+//这是主文件入口
 const express = require('express');
 const cors = require('cors');               ///引入 cors 模块，用于处理跨域请求,允许前端访问后端 API。
 const bodyParser = require('body-parser');     //引入 body-parser 模块，用于解析 HTTP 请求体中的数据
