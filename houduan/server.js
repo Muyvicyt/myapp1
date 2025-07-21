@@ -53,7 +53,7 @@ app.use((req,res,next)=>{
     }
     next()
 })
-
+*/
 
 //保护路由
 const authMiddleware = require('./middle/checkmiddle');
@@ -64,9 +64,10 @@ app.get('/api/protected', authMiddleware, (req, res) => {
         user: req.auth  ////可以把解析出来的用户信息挂载到req.auth属性上
     });
 });
-*/
 
 
+
+/*
 //配置解析token的中间件
 const secretkey = 'a3$fG7!zXqL2@vP9'
 const { expressjwt: expressJwt } = require("express-jwt");
@@ -81,7 +82,7 @@ app.use(expressJwt({
 }).unless({
     path: [/^\/api\//]
 }));
-
+*/
 // 使用路由--注册登录模块
 const authRoutes = require('./routes/authRoutes');//引入自定义的路由模块 authRoutes--注册、登录接口的路由
 app.use('/api/auth', authRoutes);     //将 authRoutes 路由挂载到 /api/auth 路径下
@@ -92,8 +93,8 @@ const videoRoutes = require('./routes/videoRoutes');
 app.use('/api/videos', videoRoutes);
 
 //使用路由--获取用户信息，更新用户信息（用户名）更新密码
-const userinfoRouters = require('./routes/userinfoRouters');
-app.use('/my/corr', userinfoRouters);
+const userRoutes = require('./routes/userRouters');
+app.use('/api/users', userRoutes);
 
 
 //一定要把它放在所有路由的后面
@@ -101,6 +102,7 @@ app.use('/my/corr', userinfoRouters);
 const path = require('path');
 app.use(express.static(path.join(__dirname, '../study')));
 
+/*
 //错误中间件   捕获JWT失败后产生的错误
 app.use((err, req, res, next) => {
     //由于token解析出错
@@ -108,7 +110,7 @@ app.use((err, req, res, next) => {
         return res.send({status:401, message: '无效的token' });
     res.send({ status: 1, message: '服务器内部错误' });
 })
-
+*/
 
 
 app.listen(PORT, () => {

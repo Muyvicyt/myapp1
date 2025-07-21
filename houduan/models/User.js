@@ -29,8 +29,72 @@ const comparePassword = async (inputPassword, hash) => {
     return await bcrypt.compare(inputPassword, hash);       //hash是加密过的密码
 };
 
+
+/**
+   * 获取用户完整信息
+   */
+const getProfile= async (userId)=> {
+    const [rows] = await pool.query(
+        'SELECT id, username, created_at FROM users WHERE id = ?',
+        [userId]
+    );
+    return rows[0];
+}
+/**
+   * 更新用户信息
+   */
+const updateProfile=async (userId, updates)=> {
+    // 1. 检查更新字段是否为空
+    if (Object.keys(updates).length === 0) {
+        throw new Error('没有提供有效更新字段');
+    }
+    // 2. 检查用户名是否已存在
+    if (updates.username) {
+        const [existing] = await pool.query(
+            'SELECT id FROM users WHERE username = ? AND id != ?',
+            [updates.username, userId]
+        );
+        if (existing.length > 0) {
+            throw new Error('用户名已存在');
+        }
+    }
+    // 3. 执行更新
+    const [result] = await pool.query(
+        'UPDATE users SET ? WHERE id = ?',
+        [updates, userId]
+    );
+    return result.affectedRows > 0;
+}
+
+/**
+ * 更新密码
+ */
+const updatePassword=async (userId, currentPassword, newPassword)=> {
+    // 验证旧密码
+    const [user] = await pool.query(
+        'SELECT password FROM users WHERE id = ?',
+        [userId]
+    );
+    if (!user[0]) throw new Error('用户不存在');
+    const isMatch = await bcrypt.compare(currentPassword, user[0].password);
+    if (!isMatch) throw new Error('用户密码错误');
+
+    // 更新密码
+    const hashedPassword = await bcrypt.hash(newPassword, 10);
+    const [result] = await pool.query(
+        'UPDATE users SET password = ? WHERE id = ?',
+        [hashedPassword, userId]
+    );
+
+    return result.affectedRows > 0;
+}
+
+
 module.exports = {
     register,
     findByUsername,
-    comparePassword
+    comparePassword,
+    getProfile,
+    updateProfile,
+    updatePassword
 };
