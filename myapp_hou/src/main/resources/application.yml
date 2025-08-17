@@ -1,0 +1,36 @@
+
+spring:
+  application:
+    name=myapp_hou:
+  datasource:
+    url: jdbc:mysql://localhost:3306/myapp_java?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver  # # 告诉springboot使用mysql
+    hikari:
+      pool-name: ProdHikariPool
+      minimum-idle: 5
+      maximum-pool-size: 20
+      idle-timeout: 300000
+      max-lifetime: 1800000 # 30分钟
+      connection-timeout: 10000 # 10秒
+  jpa:
+    hibernate:
+      ddl-auto:  validate     #验证实体与表结构是否匹配
+    show-sql: true            #将 Hibernate 执行的 SQL 语句输出到控制台
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true      #对输出的 SQL 语句进行格式化
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
+
+#JWT配置
+jwt:
+  secret: MyS3cureAppKey_2025!@#SecretKeyWithNumbersAndSymbols$%^&*()
+  expiration: 86400000   # Token过期时间，单位秒，默认1天
+server:
+  address: 127.0.0.7
+  port: 8080
