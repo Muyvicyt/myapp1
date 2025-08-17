@@ -25,7 +25,8 @@ import java.util.Objects;
  */
 @RestController     //标识为控制器，它相当于 @Controller + @ResponseBody
 @RequestMapping("/api/auth")    //发送请求的 URL 路径为 /api/auth
-@CrossOrigin(origins = "http://localhost:8080") // 前后端分离需要跨域// *允许所有来源的请求访问
+//这个地址是和前端页面所在的地址一致（即浏览器地址栏的地址）
+@CrossOrigin(origins = {"http://localhost:63342","http://localhost:8080", "http://localhost:3000"}) // 前后端分离需要跨域// *允许所有来源的请求访问
 public class AuthController {
     @Autowired
     //使用 @Autowired 让 Spring 自动把 UserService 的实现类（UserServiceImpl）注入进来

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录注册</title>
+    <link rel="stylesheet" href="./css/sign&creat.css"> <!--修改文件路径0-->
+    <link rel="stylesheet" href="./css/index-style.css">
+    <!--添加全局配置0-->
+
+</head>
+
+<body>
+
+    <nav class="left-list">
+        <div class="logo"></div>
+
+        <a href="index1.0.html">首页</a>
+        <a href="#">课程中心</a>
+        <a href="#">学习资料</a>
+        <a href="#">购物中心</a>
+        <a href="#">学习论坛</a>
+
+        <div>
+            <a href="ai-chat.html">(๑•̀ㅂ•́)و✧我是文琢</a>
+        </div>
+
+    </nav>
+
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <!-- 注册 -->
+            <form id="signupForm" method="POST">
+                <h1>用户注册</h1>
+                <span>欢迎加入我们</span>
+                <input type="text" name="username" placeholder="用户名">
+                <input type="password" name="password" placeholder="密码">
+                <input type="password" name="AgainPassword" placeholder="确认密码">
+                <button>注册</button>
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+            <!-- 登录 -->
+            <form id="signinForm" method="POST">
+                <h1>用户登录</h1>
+                <input type="text" name="username" placeholder="用户名">
+                <input type="password" name="password" placeholder="密码">
+                <button>登录</button>
+            </form>
+        </div>
+
+        <!-- 侧边栏内容 -->
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-pannel overlay-left">
+                    <h1>已有账号？</h1>
+                    <p>点击我进行登录</p>
+                    <button class="ghost" id="signIn">登录</button>
+                </div>
+
+                <div class="overlay-pannel overlay-right">
+                    <h1>没有账号？</h1>
+                    <p>点击我进行注册</p>
+                    <button class="ghost" id="signUp">注册</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/sign&creat.js"></script>
+</body>
+
+</html>
