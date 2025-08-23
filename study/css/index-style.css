@@ -99,14 +99,18 @@ body {
 }
 
 /* 导航栏logo样式 */
-.logo {
+/* .logo {
     width: 140px;
     height: 60px;
-    background-image: url('../logo.png');
+    background-image: url(study/images/logo.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     margin-right: 40px;
+} */
+.logo img {
+    width: 70px;
+    height: 70px;
 }
 
 /* AI助手链接特殊样式 */

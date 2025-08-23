@@ -15,7 +15,7 @@ p {
 .container {
     position: fixed;
     top: 50%;
-    right: 400px;
+    right: 210px;
     /* 距离右侧的距离，可以根据需要调整 */
     transform: translateY(-50%);
     /* 垂直居中 */

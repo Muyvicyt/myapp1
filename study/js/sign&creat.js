@@ -37,7 +37,7 @@ signupForm.addEventListener('submit', async (e) => {
 
     try {
         // 发送注册请求到后端API
-        const response = await fetch('http://127.0.0.7:8080/api/auth/register', {
+        const response = await fetch('http://localhost:3000/api/auth/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -83,7 +83,7 @@ signinForm.addEventListener('submit', async (e) => {
 
     try {
         // 发送登录请求到后端API
-        const response = await fetch('http://127.0.0.7:8080/api/auth/login', {
+        const response = await fetch('http://localhost:3000/api/auth/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

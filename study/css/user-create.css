@@ -1,0 +1,320 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    background-color: #fff;
+}
+
+/* 清除浮动代码 */
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* 版心 */
+.w {
+    width: 1400px;
+    margin: 0 auto;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* header部分 */
+.header {
+    height: 70px;
+    background-color: rgba(153, 188, 253, 0.3);
+    box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    float: left;
+    margin: 10px 0 10px 30px;
+    width: 100px;
+    height: 50px;
+    /* background-color: pink; */
+    /* background-image: url(../images/logo2.png); */
+    /* background-repeat: no-repeat; */
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+}
+
+.nav {
+    float: left;
+    margin: 10px 0 10px 50px;
+    height: 50px;
+
+}
+
+.nav ul li {
+    float: left;
+    padding: 0 20px;
+    line-height: 50px;
+}
+
+.nav ul li a {
+    color: black;
+}
+
+.nav ul li a:hover {
+    color: #fff;
+}
+
+.nav ul li:hover {
+    border-radius: 10px 10px 10px 10px;
+    background-color: #6aa0da;
+}
+
+.search {
+    float: left;
+    height: 40px;
+    margin: 10px 0 10px 50px;
+}
+
+.search input {
+    float: left;
+    width: 340px;
+    height: 40px;
+    padding-left: 10px;
+    color: #b3b5b7;
+    font-size: 14px;
+    border: 2px solid rgb(181, 181, 181, 0.3);
+    border-radius: 30px;
+}
+
+.search button {
+    float: left;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 0;
+    background-image: url(../images/btn2.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* .search button img {
+    width: 100%;
+} */
+
+.user {
+    float: right;
+    margin: 20px 20px 10px 50px;
+    height: 40px;
+    font-size: 14px;
+    color: #b3b5b7;
+}
+
+/* bannner部分 */
+.banner {
+    margin-top: 20px;
+    height: 100px;
+    /* background-color: rgba(153, 188, 253, 0.3); */
+}
+
+.banner .w {
+    height: 100px;
+}
+
+.avater {
+    float: left;
+    margin: 20px 0 0 10px;
+    height: 60px;
+}
+
+.avater .use {
+    float: left;
+    height: 60px;
+    width: 60px;
+    /* border-radius: 50%; */
+    border: 3px solid #fff;
+    background-color: blue;
+}
+
+.avater .use img {
+    width: 100%;
+}
+
+.avater .name {
+    float: left;
+    margin-left: 25px;
+}
+
+.avater .name .nicheng {
+    margin-top: 5px;
+}
+
+.avater .name .nicheng a {
+    font-size: 18px;
+    color: gray;
+}
+
+.avater .name .gexing {
+    margin-top: 5px;
+}
+
+.avater .name .gexing a {
+    font-size: 14px;
+    color: gray;
+}
+
+.settings {
+    float: right;
+    margin: 50px 10px 10px 0;
+    height: 30px;
+    color: pink;
+}
+
+.settings .logo-set {
+    float: left;
+    width: 32px;
+    height: 32px;
+    background-image: url(../images/set.png);
+    background-repeat: no-repeat;
+    /* background-position: center; */
+}
+
+.settings .set {
+    float: left;
+}
+
+.settings .set a {
+    color: black;
+}
+
+/* 个人主页导航栏 */
+.navbar {
+    height: 60px;
+    /* background-color: pink; */
+}
+
+.navbar .box-left {
+    float: left;
+    margin-left: 10px;
+}
+
+.navbar .box-left ul li {
+    float: left;
+    padding-right: 30px;
+    margin: 15px 0;
+}
+
+.navbar .box-left ul li a {
+    display: inline-block;
+    height: 30px;
+    font-size: 18px;
+    color: #252628;
+}
+
+.navbar .box-left ul li a:hover {
+    color: #00aeec;
+    border-bottom: 3px solid #00aeec;
+}
+
+.navbar .box-right {
+    float: right;
+    margin: 10px 0;
+}
+
+.navbar .box-right ul li {
+    float: left;
+    margin-right: 35px;
+    width: 50px;
+    height: 40px;
+    text-align: center;
+}
+
+.navbar .box-right ul li h5 {
+    font-size: 12px;
+    color: #6f737a;
+}
+
+.navbar .box-right ul li a {
+    font-size: 14px;
+    color: #252628;
+}
+
+.navbar .box-right ul li a:hover {
+    color: #00aeec;
+}
+
+/* 创作核心模块 */
+
+.create {
+    margin-top: 5px;
+}
+
+.create .crt-left {
+    float: left;
+}
+
+.create .box-bd li {
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    width: 218px;
+    height: 260px;
+    background-color: #f3f5f7;
+    box-shadow: 0 2px 3px 2px rgba(0, 0, 0, 0.1);
+}
+
+.box-hd {
+    height: 43px;
+}
+
+.create .box-hd h3 {
+    float: left;
+    color: #686969;
+    font-weight: 400;
+}
+
+.box-hd div {
+    float: right;
+    margin-right: 30px;
+}
+
+.box-hd div a {
+    color: #686969;
+    font-size: 18px;
+}
+
+.box-hd div a:hover {
+    color: #00aeec;
+}
+
+.box-bd ul li img {
+    width: 100%;
+}
+
+.box-bd ul li h5 {
+    padding: 15px 20px;
+    color: #050505;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.box-bd ul li p {
+    padding: 0 20px;
+    font-size: 14px;
+    color: #b8b8b8;
+}
